@@ -1,4 +1,4 @@
-class Tarefa {
+class Processo {
     constructor(
         private _id: number,
         private _ingresso: number,
@@ -48,7 +48,7 @@ class Tarefa {
 
 class RoundRobin {
     constructor(
-        private _processos: Tarefa[],
+        private _processos: Processo[],
         private _tc: number = 4,
         private _quantum = 15,
         private _tempoAtual = 0
@@ -131,9 +131,9 @@ class RoundRobin {
     }
 }
 
-const tarefa1 = new Tarefa(1, 5, 10);
-const tarefa2 = new Tarefa(2, 15, 30);
-const tarefa3 = new Tarefa(3, 10, 20);
-const tarefa4 = new Tarefa(4, 0, 40);
+const tarefa1 = new Processo(1, 5, 10);
+const tarefa2 = new Processo(2, 15, 30);
+const tarefa3 = new Processo(3, 10, 20);
+const tarefa4 = new Processo(4, 0, 40);
 const roundRobin = new RoundRobin([tarefa4, tarefa1, tarefa3, tarefa2]);
 roundRobin.executar();
